@@ -1,0 +1,41 @@
+extends ../pug/layout.pug
+
+block variables
+  - isMainPage = false
+  - pageTitle = 'Стартовая страница'
+  - metaDescription = 'description'
+  - metaKeywords = 'keywords'
+
+block main
+  +header
+  .wrapper.wrapper--main
+    .wrapper__content
+      +main-banner
+      +dignity
+      +news
+      +products('Акционные товары', 'yellow', 'promotional__swipper', 'promotional')
+      +reviews
+      +products('Новинки', 'mint', 'news__swipper', 'news')
+      +products('Выбор вегана', 'green', 'vegan__swipper', 'vegan')
+      +products('Популярные товары', 'orange', 'popular__swipper', 'popular')
+      +feedback
+      +menu
+    +aside-basket
+  +footer
+//- block content
+//-   section.hero
+//-     .grid
+//-       .hero__inner
+//-         h1.hero__title Я заголовок
+//-         p.hero__descr Блок <code>hero</code> сделан с помощью гибкой функции.
+//-         p.hero__descr!= hero.heroString
+
+//-         .hero__tiles
+//-           .hero__tile
+//-             .hero__tile-descr Иконка из спрайта
+//-             svg.hero__icon
+//-               use(href='img/svgSprite.svg#icon__default')
+//-           .hero__tile.hero__tile--bg
+//-             .hero__tile-descr Иконка из спрайта фоном
+//-         p.hero__descr
+//-           button.hero__trigger Кликни меня!

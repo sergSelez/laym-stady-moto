@@ -1,0 +1,41 @@
+@mixin title {
+  font-size: rem(24px);
+  line-height: rem(29px);
+  font-weight: 700;
+}
+
+@mixin semi-title {
+  font-size: rem(18px);
+  line-height: rem(22px);
+  font-weight: 700;
+}
+
+@mixin text-large($weight: 400) {
+  font-size: rem(14px);
+  line-height: rem(17px);
+  font-weight: $weight;
+}
+
+@mixin text-main($weight: 400) {
+  font-size: rem(12px);
+  line-height: rem(15px);
+  font-weight: $weight;
+}
+
+@mixin text-small($weight: 400) {
+  font-size: rem(10px);
+  line-height: rem(12px);
+  font-weight: $weight;
+}
+
+@mixin text-smaller($weight: 400) {
+  font-size: rem(8px);
+  line-height: rem(10px);
+  font-weight: $weight;
+}
+
+@mixin font($size, $height, $weight: 400) {
+  font-size: rem($size);
+  line-height: rem($height);
+  font-weight: $weight;
+}

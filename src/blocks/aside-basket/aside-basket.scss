@@ -1,0 +1,259 @@
+.aside-basket {
+  display: none;
+
+  @media screen and (min-width: $screen-xl) {
+    @include flex-column;
+    @include size(100%, calc(100vh - 116px));
+    @include shadow;
+    background-color: $color-gray;
+    position: sticky;
+    top: rem(116px);
+  }
+
+  &__wrapper {
+    @include flex-center;
+    flex-direction: column;
+    padding: rem(12px) rem(10px) rem(10px);
+    background-color: $color-white;
+    width: 100%;
+    
+    &--top {
+      border-radius: 0 0 10px 10px;
+    }
+
+    &--bottom {
+      border-radius: 10px 10px 0 0;
+    }
+  }
+
+  &__empty-wrapper {
+    @include flex-column;
+    align-items: center;
+    padding-top: rem(45px);
+
+    &.disable {
+      display: none;
+    }
+  }
+
+  &__body {
+    @include flex-column;
+    gap: rem(4px);
+    padding: rem(8px) rem(6px);
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  &__text {
+    @include text-large;
+
+    &--bold {
+      font-weight: 700;
+    }
+  }
+
+  &__thin-text {
+    @include text-main;
+    text-align: center;
+    opacity: 0.3;
+    margin-bottom: rem(36px);
+  }
+
+  &__empty-img {
+    @include size(rem(74px), rem(74px));
+    margin-bottom: rem(19px);
+  }
+
+  &__empty-text {
+    @include text-large(700);
+    opacity: 0.3;
+    margin-bottom: rem(46px);
+  }
+
+  &__catalog-link {
+    @include flex-center;
+    @include text-large(700);
+    @include shadow;
+    @include size(100%, rem(45px));
+    background-color: $color-white;
+    border-radius: 10px;
+    margin-bottom: rem(10px);
+  }
+
+  &__last-link {
+    @include text-main;
+    text-decoration: underline;
+    opacity: 0.7;
+    margin-bottom: rem(7px);
+  }
+
+  &__price {
+    @include flex-between-center;
+    width: 100%;
+    margin-bottom: rem(10px);
+  }
+
+  &__confirm {
+    @include flex-between-center;
+    @include text-main(700);
+    width: 100%;
+    background-color: $color-green;
+    border-radius: 10px;
+    padding: 0 rem(8px);
+    height: rem(40px);
+  }
+
+  &__amount {
+    @include size(rem(24px), rem(24px));
+    position: relative;
+  }
+
+  &__amount-value {
+    @include size(rem(14px), rem(14px));
+    @include flex-center;
+    @include text-smaller(500);
+    background-color: $color-white;
+    border: 1px solid #A1D214;
+    border-radius: 100px;
+    position: absolute;
+    right: rem(-6px);
+    top: rem(-4px);
+  }
+
+  &__item {
+    @include flex-between-center;
+    height: rem(58px);
+    gap: rem(12px);
+    background-color: $color-white;
+    border-radius: 5px;
+    padding: rem(5px) rem(10px);
+    position: relative;
+  }
+
+  &__item-left {
+    @include size(rem(47px), rem(50px));
+    @include flex-between-center;
+  }
+
+  &__item-right {
+
+  }
+
+  &__img-product {
+    height: 100%;
+  }
+
+  &__count {
+    @include flex-column;
+    @include text-main;
+  }
+
+  &__count-button {
+    @include flex-center;
+    @include size(rem(7px), rem(15px));
+    cursor: pointer;
+    opacity: 0.3;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__item-name {
+    @include text-smaller(500);
+    display: block;
+    opacity: 0.7;
+    margin-bottom: rem(9px);
+  }
+
+  &__item-values {
+    @include flex-between-center;
+  }
+
+  &__item-price {
+    @include text-small(700);
+  }
+
+  &__item-weight {
+    @include text-smaller;
+    opacity: 0.5;
+  }
+
+  &__close {
+    @include size(rem(8px), rem(8px));
+    position: absolute;
+    top: rem(4px);
+    right: rem(4px);
+    cursor: pointer;
+  }
+}
+
+.item {
+  @include flex-between-center;
+  height: rem(70px);
+  gap: rem(12px);
+  background-color: $color-white;
+  border-radius: 5px;
+  padding: rem(5px) rem(10px);
+  position: relative;
+
+  &__left {
+    @include flex-between-center;
+    flex: 0 0 rem(47px);
+  }
+
+  &__img-wrapper {
+    width: rem(30px);
+    text-align: center;
+  }
+
+  &__img {
+    max-height: rem(60px);
+  }
+
+  &__count {
+    @include flex-column;
+    @include text-main;
+  }
+
+  &__count-button {
+    @include flex-center;
+    @include size(rem(7px), rem(15px));
+    cursor: pointer;
+    opacity: 0.3;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__name {
+    @include text-small(500);
+    display: block;
+    opacity: 0.7;
+    margin-bottom: rem(9px);
+  }
+
+  &__values {
+    @include flex-between-center;
+    max-width: rem(90px);
+    width: 100%;
+  }
+
+  &__price {
+    @include text-main(700);
+  }
+
+  &__weight {
+    @include text-small;
+    opacity: 0.5;
+  }
+
+  &__close {
+    @include size(rem(8px), rem(8px));
+    position: absolute;
+    top: rem(4px);
+    right: rem(4px);
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,28 @@
+mixin products(title, lineColor, swiperName, arrowClass)
+  section.products
+    .products__prev(class=`${arrowClass}-prev`)
+    .products__next(class=`${arrowClass}-next`)
+    .products__head
+      .products__title(class=lineColor)!=title
+      a.products__all-button(href="#") Все
+    .swiper.products__swiper(class=swiperName)
+      .swiper-wrapper.products__wrapper
+        each item in products.items
+          .swiper-slide.products__item(data-id=item.id, data-name=item.name, data-price=item.price, data-weight=item.weight, data-img=item.img)
+            .products__img-wrapper
+              svg.products__favorite
+                use(href='img/svgSprite.svg#favorite-item')
+              img.products__img(src=`img/${item.img}.png`, alt=item.name)
+              .products__discount -26%
+            .products__rating
+              img.products__stars(src="img/stars.svg", alt="Рейтинг")
+              span.products__counter 3 254
+            .products__name!=item.name
+            .products__info
+              span.products__price.products__price--new!=`${item.price} руб.`
+              span.products__old-price!=`${item.oldPrice} руб.`
+            button.products__button
+              svg.products__plus
+                use(href='img/svgSprite.svg#plus')
+              | В корзину
+      .swiper-scrollbar.products__scrollbar

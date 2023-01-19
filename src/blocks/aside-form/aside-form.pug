@@ -1,0 +1,27 @@
+mixin aside-form
+  .aside-form
+    .aside-form__box
+      .aside-form__title Контактные данные
+      .aside-form__row.aside-form__row--column
+        input.aside-form__input(type="text", placeholder="Ваше имя")
+        input.aside-form__input(type="text", placeholder="Номер телефона")
+      input.aside-form__input(type="text", placeholder="Ваш e-mail")
+    .aside-form__box
+      .aside-form__title Адрес доставки
+      .aside-form__adress ул.Пимена-панчанки, д. 12, под. 4, кв. 312
+      .aside-form__row
+        input.aside-form__input(type="text", placeholder="Начните вводить новый адрес")
+      .aside-form__row
+        input.aside-form__input(type="text", placeholder="Подъезд")
+        input.aside-form__input(type="text", placeholder="Этаж")
+        input.aside-form__input(type="text", placeholder="Квартира")
+      input.aside-form__input(type="date", placeholder="Выберите дату и время доставки")
+    .aside-form__box
+      .aside-form__title Оплата заказа
+      .aside-form__order-wrapper
+        .aside-form__order-item.active Картой онлайн
+        .aside-form__order-item Картой курьеру
+        .aside-form__order-item Наличными курьеру
+        .aside-form__order-item Сертификатом
+      input.aside-form__input(type="text", placeholder="Комментарий к заказу")
+    +confirm

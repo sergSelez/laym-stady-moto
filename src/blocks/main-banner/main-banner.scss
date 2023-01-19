@@ -1,0 +1,105 @@
+.main-banner {
+  margin: 0 rem(-8px) rem(35px);
+
+  @media screen and (min-width: $screen-xl) {
+    margin: 0 0 rem(35px);
+    position: relative;
+  }
+
+  &__mob-swiper {
+    @media screen and (min-width: $screen-xl) {
+      display: none;
+    }
+  }
+
+  &__swiper {
+    display: none;
+
+    @media screen and (min-width: $screen-xl) {
+      display: block;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  &__pagination {
+    position: static;
+
+    @media screen and (min-width: $screen-xl) {
+      position: absolute;
+      bottom: 0;
+      z-index: 9999;
+    }
+  }
+
+  &__prev,
+  &__next {
+    @include size(rem(21px), rem(48px));
+    @include small-shadow;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-color: $color-white;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 2;
+
+    @media screen and (min-width: $screen-xl) {
+      @include size(rem(27px), rem(72px));
+    }
+  }
+
+  &__prev {
+    background-image: url('../img/prev-arrow.svg');
+    left: rem(8px);
+
+    @media screen and (min-width: $screen-xl) {
+      left: rem(-13.5px);
+    }
+  }
+
+  &__next {
+    background-image: url('../img/next-arrow.svg');
+    right: rem(8px);
+
+    @media screen and (min-width: $screen-xl) {
+      right: rem(-13.5px);
+    }
+  }
+  .swiper-pagination-bullet {
+    background: $color-gray-white;
+
+    @media screen and (min-width: $screen-xl) {
+      background: $color-white;
+    }
+  }i
+  .swiper-pagination-bullet-active {
+    background: $color-text;
+
+    @media screen and (min-width: $screen-xl) {
+      background: #EC8C8B;
+    }
+  }
+
+  .swiper {
+    @media screen and (min-width: $screen-xl) {
+      max-width: rem(855px);
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+
+  .swiper-slide {
+    width: 86%;
+
+    @media screen and (min-width: $screen-xl) {
+      width: 100%;
+    }
+  }
+}

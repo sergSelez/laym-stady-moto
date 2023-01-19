@@ -1,0 +1,11 @@
+@mixin small-shadow {
+  box-shadow: 0px 0px 10px $color-shadow;
+}
+
+@mixin shadow {
+  box-shadow: 0px 0px 20px $color-shadow;
+}
+
+@mixin wide-shadow {
+  box-shadow: 0px 10px 20px $color-shadow;
+}

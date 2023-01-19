@@ -1,0 +1,14 @@
+mixin menu
+  .menu
+    ul.menu__list
+      .menu__title Выберите категорию
+      each item in menu.items ? menu.items : []
+        li.menu__item
+          img.menu__icon(src=`img/${item.icon}.svg`, alt=item.name)
+          .menu__name!=item.name
+        .menu__submenu-wrapper
+          .menu__subtitle!=item.name
+          .menu__link-wrapper
+            each subitem in item.submenu ? item.submenu : []
+              a.menu__link(href="#")!=subitem.title
+  .menu__dark-wrapper

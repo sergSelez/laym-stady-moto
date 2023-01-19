@@ -1,0 +1,156 @@
+.reviews {
+  @include wide-shadow;
+  background-color: $color-gray-bg;
+  border-radius: 10px;
+  margin-bottom: rem(28px);
+  padding: rem(14px) rem(20px) rem(11px);
+
+  @media screen and (min-width: $screen-xl) {
+    display: flex;
+    gap: rem(24px);
+    padding: rem(14px) 0 rem(14px) rem(26px);
+  }
+
+  &__head {
+    @include flex-between-center;
+    margin-bottom: rem(20px);
+
+    @media screen and (min-width: $screen-xl) {
+      flex-direction: column;
+      justify-content: center;
+      gap: rem(15px);
+      max-width: rem(174px);
+      width: 100%;
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    @include semi-title;
+    max-width: rem(80px);
+
+    @media screen and (min-width: $screen-xl) {
+      max-width: none;
+    }
+  }
+
+  &__button {
+    @include flex-center;
+    @include text-large(700);
+    background-color: $color-green;
+    border-radius: 10px;
+    padding: rem(10px) rem(26px);
+    cursor: pointer;
+  }
+
+  &__wrapper {
+    max-height: rem(250px);
+    overflow-y: hidden;
+    position: relative;
+    transition: max-height 0.3s;
+
+    @media screen and (min-width: $screen-xl) {
+      display: none;
+    }
+
+    &::after {
+      @include size(100%, rem(60px));
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(0deg, #f8f8f8 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    &--active {
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__item {
+    margin-bottom: rem(20px);
+
+    @media screen and (min-width: $screen-xl) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__name {
+    @include text-small(600);
+    margin-bottom: rem(10px);
+    padding-left: rem(20px);
+    position: relative;
+
+    &::before {
+      @include size(rem(10px), rem(14px));
+      background-image: url('../img/person.svg');
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__text {
+    @include text-main(500);
+  }
+
+  &__show-button {
+    @include text-main(700);
+    text-align: center;
+    text-decoration: underline;
+    cursor: pointer;
+
+    @media screen and (min-width: $screen-xl) {
+      display: none;
+    }
+  }
+
+  &__swipper {
+    display: none;
+
+    @media screen and (min-width: $screen-xl) {
+      display: block;
+      position: relative;
+      padding: 0 rem(26px);
+    }
+  }
+
+  .reviews__prev,
+  .reviews__next {
+    @media screen and (min-width: $screen-xl) {
+      @include size(rem(27px), rem(72px));
+      @include small-shadow;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-color: $color-gray-bg;
+      border-radius: 5px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    &.swiper-button-disabled {
+      display: none;
+    }
+  }
+
+  &__prev {
+    @media screen and (min-width: $screen-xl) {
+      background-image: url('../img/prev-arrow.svg');
+      left: 0;
+    }
+  }
+
+  &__next {
+    @media screen and (min-width: $screen-xl) {
+      background-image: url('../img/next-arrow.svg');
+      right: 0;
+    }
+  }
+}

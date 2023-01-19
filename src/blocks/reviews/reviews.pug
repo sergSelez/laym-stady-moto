@@ -1,0 +1,19 @@
+mixin reviews
+  .reviews
+    .reviews__head
+      span.reviews__title Отзывы о&nbsp;лайме
+      button.reviews__button Написать отзыв
+    .reviews__wrapper
+      each item in reviews.items
+        .reviews__item
+          .reviews__name!=item.name
+          .reviews__text!=item.text
+    .reviews__show-button Смотреть все отзывы
+    .swiper.reviews__swipper
+      .reviews__prev
+      .reviews__next
+      .swiper-wrapper
+        each item in reviews.items
+          .swiper-slide.reviews__item
+            .reviews__name!=item.name
+            .reviews__text!=item.text

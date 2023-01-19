@@ -1,0 +1,43 @@
+mixin main-banner
+  -
+    const banners = [
+      {
+        src: 'slide-1',
+        url: '#',
+        name: 'Описание'
+      },
+      {
+        src: 'slide-2',
+        url: '#',
+        name: 'Описание'
+      },
+      {
+        src: 'slide-3',
+        url: '#',
+        name: 'Описание'
+      },
+      {
+        src: 'slide-4',
+        url: '#',
+        name: 'Описание'
+      }
+    ]
+  section.main-banner
+    .swiper.main-banner__swiper
+      .swiper-wrapper
+        each item in banners
+          .swiper-slide
+            a.main-banner__wrapper(href=item.url) 
+              img.main-banner__img(src=`img/${item.src}.png`, alt=item.name)
+      .main-banner__prev
+      .main-banner__next
+    .swiper-pagination.main-banner__pagination
+    .swiper.main-banner__mob-swiper
+      .swiper-wrapper
+        each item in banners
+          .swiper-slide
+            a.main-banner__wrapper(href=item.url) 
+              img.main-banner__img(src=`img/${item.src}.png`, alt=item.name)
+      .main-banner__prev
+      .main-banner__next
+    .swiper-pagination.main-banner__pagination

@@ -1,0 +1,225 @@
+.products {
+  margin-bottom: rem(34px);
+
+  @media screen and (min-width: $screen-xl) {
+    @include wide-shadow;
+    border-radius: 10px;
+    margin: 0 rem(-14px) rem(36px);
+    padding-top: rem(8px);
+    position: relative;
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (min-width: $screen-xl) {
+      padding: 0 rem(14px);
+    }
+  }
+
+  &__title {
+    @include text-large(700);
+    display: inline-block;
+    position: relative;
+
+    &::after {
+      @include size(100%, 2px);
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      border-radius: 10px;
+    }
+
+    &.yellow::after {
+      background: linear-gradient(90deg, #FFA800 0%, #FFC709 100%), #A1D214;
+    }
+
+    &.mint::after {
+      background: linear-gradient(90deg, #00D1FF 0%, #17BADE 0.01%, #14D28E 100%), #A1D214;
+    }
+
+    &.green::after {
+      background: linear-gradient(90deg, #76B852 0%, #8DC26F 100%), #A1D214;
+    }
+
+    &.orange::after {
+      background: linear-gradient(90deg, #FF5C00 0%, #FF9900 100%), #A1D214;
+    }
+  }
+
+  &__all-button {
+    @include text-main(700);
+    padding-right: rem(30px);
+    position: relative;
+    transform: translateY(5px);
+
+    &::after {
+      @include size(rem(24px), rem(24px));
+      content: '';
+      position: absolute;
+      right: 0;
+      top: calc(50% - 13px);
+      background-image: url('../img/right-arrow.svg');
+      background-size: contain;
+    }
+  }
+
+  &__swiper {
+    padding-top: rem(27px);
+
+    @media screen and (min-width: $screen-xl) {
+      padding: rem(34px) rem(14px) rem(17px);
+    }
+  }
+
+  &__wrapper {
+    height: auto;
+    padding-bottom: rem(16px);
+
+    @media screen and (min-width: $screen-xl) {
+      padding-bottom: 0;
+    }
+  }
+
+  &__item {
+    width: rem(105px);
+
+    @media screen and (min-width: $screen-xl) {
+      padding: rem(10px);
+      width: auto;
+      transition: box-shadow 0.2s;
+
+      &:hover {
+        @include wide-shadow;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  &__img-wrapper {
+    position: relative;
+    height: rem(106px);
+    text-align: center;
+    margin-bottom: rem(6px);
+  }
+
+  &__img {
+    height: 100%;
+  }
+
+  &__favorite {
+    @include size(16px, 14px);
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+  }
+
+  &__discount {
+    @include size(rem(36px), rem(18px));
+    @include shadow;
+    @include flex-center;
+    @include text-smaller(700);
+    background-color: $color-red;
+    border-radius: 5px;
+    color: $color-white;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+
+  &__rating {
+    margin-bottom: rem(5px);
+  }
+
+  &__stars {
+    @include size(rem(60px), rem(9px));
+    margin-right: rem(10px);
+  }
+
+  &__counter {
+    @include font(9px, 11px, 500);
+    opacity: 0.5;
+  }
+
+  &__name {
+    @include text-small(500);
+    margin-bottom: rem(4px);
+  }
+
+  &__info {
+    margin-bottom: rem(8px);
+  }
+
+  &__price {
+    @include font(11px, 13px, 700);
+    margin-right: rem(4px);
+
+    &--new {
+      color: $color-red;
+    }
+  }
+
+  &__old-price {
+    @include text-smaller(500);
+    text-decoration: line-through;
+  }
+
+  &__button {
+    @include size(100%, 27px);
+    @include text-small(700);
+    display: flex;
+    align-items: center;
+    padding: 0 rem(8px);
+    background-color: $color-green;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  &__plus {
+    @include size(rem(10px), rem(10px));
+    margin-right: rem(14px);
+  }
+
+  &__prev,
+  &__next {
+    display: none;
+
+    @media screen and (min-width: $screen-xl) {
+      @include size(rem(27px), rem(72px));
+      @include small-shadow;
+      display: block;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-color: $color-white;
+      border-radius: 5px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      z-index: 2;
+    }
+  }
+
+  &__prev {
+    @media screen and (min-width: $screen-xl) {
+      background-image: url('../img/prev-arrow.svg');
+      left: 0;
+    }
+  }
+
+  &__next {
+    @media screen and (min-width: $screen-xl) {
+      background-image: url('../img/next-arrow.svg');
+      right: 0;
+    }
+  }
+
+  &__scrollbar {
+    @media screen and (min-width: $screen-xl) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+mixin header
+  -
+    const links = [
+      {
+        name: 'Шеф-лайм',
+        link: '#',
+      },
+      {
+        name: 'Вакансии',
+        link: '#',
+      },
+      {
+        name: 'Вопрос-ответ',
+        link: '#',
+      },
+      {
+        name: 'Бонусная программа',
+        link: '#',
+      }
+    ]
+
+  header.header
+    .header__head
+      .header__inner.header__inner--head
+        .header__info
+          a.header__info-item.header__info-item--phone(href="#") 7756
+          a.header__info-item.header__info-item--mark(href="#") Зона доставки
+          span.header__info-item.header__info-item--clock 17:00 - 17:45
+        nav.header__links
+          each item in links
+            a.header__link(href=item.link)!=item.name
+    .header__body
+      .header__inner.header__inner--body
+        a.header__logo-link(href="/index.html")
+          svg.header__logo
+            use(href='img/svgSprite.svg#logo')
+        .header__wrapper.header__wrapper--desc
+          button.header__menu
+            svg(width="22", height="16")
+              use(href='img/svgSprite.svg#button-menu')
+            span Каталог
+          input.header__search(type="text" placeholder="Купить молоко")
+          .header__discounts Скидки
+        .header__wrapper.header__wrapper--mob
+          svg.header__burger
+            use(href='img/svgSprite.svg#menu')
+          .header__persent %
+        .header__wrapper
+          a.header__personal-link(href="#")
+            svg(width="16", height="20")
+              use(href='img/svgSprite.svg#profile')
+            span Кабинет
+          a.header__personal-link(href="#")
+            svg(width="20", height="18")
+              use(href='img/svgSprite.svg#favorite')
+            span Избранное
+          a.header__personal-link.header__personal-link--basket(href="/basket.html")
+            svg(width="20", height="20")
+              use(href='img/svgSprite.svg#basket')
+            span Корзина
+        

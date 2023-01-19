@@ -1,0 +1,144 @@
+.footer {
+  background-color: $color-text;
+  padding: rem(52px) 0 rem(84px);
+  margin-top: rem(35px);
+
+  @media screen and (min-width: $screen-xl) {
+    margin-top: rem(51px);
+  }
+
+  &__left {
+    @include flex-column;
+    gap: rem(72px);
+
+    @media screen and (min-width: $screen-xl) {
+      flex-direction: row;
+      margin-right: rem(152px);
+    }
+  }
+
+  &__logo-wrapper {
+    max-width: rem(259px);
+    width: 100%;
+  }
+
+  &__logo {
+    @include size(rem(203px), rem(135px));
+    margin-bottom: rem(36px);
+  }
+
+  &__text {
+    @include text-main(500);
+    color: $color-white;
+
+    &--mb {
+      margin-bottom: rem(15px);
+    }
+  }
+
+  &__privacy {
+    @include text-main(500);
+    color: $color-green;
+    text-decoration: underline;
+  }
+
+  &__title {
+    @include semi-title;
+    color: $color-white;
+    opacity: 0.3;
+    margin-bottom: rem(20px);
+  }
+
+  &__ul {
+    @include flex-column;
+    gap: rem(12px);
+    list-style: none;
+  }
+
+  &__menu-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(40px);
+
+    @media screen and (min-width: $screen-xl) {
+      max-width: rem(385px);
+      width: 100%;
+    }
+  }
+
+  &__menu {
+    @media screen and (min-width: $screen-xl) {
+      margin-top: rem(62px);
+    }
+  }
+
+  &__menu-link {
+    @include text-large(500);
+    color: $color-white;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $color-green-dark;
+    }
+  }
+
+  &__right {
+    margin-top: rem(62px)
+  }
+
+  &__right-text {
+    @include text-large(500);
+    color: $color-white;
+    margin-bottom: rem(18px);
+  }
+
+  &__phone {
+    @include font(42px, 51px, 700);
+    display: block;
+    color: $color-white;
+    padding-left: rem(38px);
+    position: relative;
+    margin-bottom: rem(38px);
+    transition: color 0.3s;
+
+    &:hover {
+      color: $color-green-dark;
+    }
+
+    &::before {
+      @include size(rem(25px), rem(24px));
+      background-image: url('../img/footer-phone.svg');
+      background-size: contain;
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__button {
+    @include text-large(500);
+    @include size(rem(243px), rem(45px));
+    border: 1px solid $color-gray-border;
+    border-radius: 10px;
+    color: $color-white;
+    display: flex;
+    align-items: center;
+    gap: rem(20px);
+    margin-bottom: rem(12px);
+    padding: 0 rem(15px) 0 rem(20px);
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $color-brown;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: rem(12px);
+    list-style: none;
+    margin-top: rem(32px);
+  }
+}

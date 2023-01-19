@@ -1,0 +1,143 @@
+.basket {
+  width: 100%;
+
+  &__title {
+    @include title;
+    margin-bottom: rem(16px);
+
+    @media screen and (min-width: $screen-xl)  {
+      margin-bottom: rem(38px);
+    }
+  }
+
+  &__wrapper {
+    
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: rem(80px) auto rem(65px) rem(14px) rem(14px);
+    row-gap: rem(9px);
+    border-radius: 5px;
+    padding: rem(16px) 0;
+
+    @media screen and (min-width: $screen-xl) {
+      border-bottom: 1px solid $color-gray-white;
+      grid-template-columns: rem(80px) auto rem(42px) rem(65px) rem(110px) rem(46px);
+      row-gap: 0;
+      column-gap: rem(60px);
+      padding: rem(12px) rem(26px) rem(12px) rem(9px);
+      align-items: center;
+      transition: box-shadow 0.3s;
+
+      &:hover {
+        box-shadow: 0px 10px 20px $color-shadow;
+      }
+
+      &:last-of-type {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &__img-wrapper {
+    grid-column: 1;
+    grid-row: 1 / 4;
+    text-align: center;
+
+    @media screen and (min-width: $screen-xl) {
+      grid-row: 1;
+    }
+  }
+
+  &__img {
+    max-height: rem(79px);
+  }
+
+  &__name {
+    @include text-large(500);
+    grid-column: 2 / 4;
+
+    @media screen and (min-width: $screen-xl) {
+      grid-column: 2;
+    }
+  }
+
+  &__control {
+    @include flex-column;
+    align-items: center;
+    gap: rem(12px);
+    grid-column: 5 /-1;
+    padding-top: 4px;
+
+    @media screen and (min-width: $screen-xl) {
+      grid-column: 6;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      padding-top: 0;
+    }
+  }
+
+  &__remove {
+    @include flex-center;
+    @include size(rem(10px), rem(10px));
+    cursor: pointer;
+  }
+
+  &__bju {
+    grid-column: 2 / 4;
+    display: flex;
+    gap: rem(10px);
+
+    @media screen and (min-width: $screen-xl) {
+      grid-column: 3;
+      grid-row: 1;
+      flex-direction: column;
+      gap: rem(3px);
+    }
+  }
+
+  &__energy {
+    @include text-small;
+
+    &--gray {
+      color: $color-gray-text;
+    }
+  }
+
+  &__price {
+    @include font(16px, 22px, 700);
+    grid-column: 2;
+
+    @media screen and (min-width: $screen-xl) {
+      grid-column: 5;
+      grid-row: 1;
+    }
+  }
+
+  &__count {
+    grid-column: 3;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: rem(11px);
+
+    @media screen and (min-width: $screen-xl) {
+      grid-column: 4;
+      grid-row: 1;
+    }
+  }
+
+  &__count-value {
+    @include text-main;
+  }
+
+  &__count-button {
+    @include flex-center;
+    @include size(rem(18px), rem(18px));
+    @include text-main;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+  }
+}

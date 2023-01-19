@@ -1,0 +1,24 @@
+mixin aside-basket
+  aside.aside-basket 
+    .aside-basket__wrapper.aside-basket__wrapper--top
+      span.aside-basket__text Здравствуйте, 
+      span.aside-basket__text.aside-basket__text--bold Михаил!
+    .aside-basket__body
+      .aside-basket__empty-wrapper
+        svg.aside-basket__empty-img
+          use(href='img/svgSprite.svg#empty')
+        span.aside-basket__empty-text Ваша корзина пуста
+        a.aside-basket__catalog-link(href="#") Перейти в каталог
+        span.aside-basket__thin-text Выбирайте из более чем 1000 свежих товаров!
+        a.aside-basket__last-link(href="#") Повторить прошлый заказ
+        span.aside-basket__thin-text Вы можете быстро добавить в корзину ваши предыдущие покупки
+    .aside-basket__wrapper.aside-basket__wrapper--bottom
+      .aside-basket__price
+        span.aside-basket__text Итого, руб:
+        span.aside-basket__text.aside-basket__text--bold.aside-basket__sum 0
+      a.aside-basket__confirm(href="/basket.html")
+        .aside-basket__amount
+          svg(width="24", height="24")
+            use(href='img/svgSprite.svg#basket-coint')
+          .aside-basket__amount-value 0
+        span Подтвердить заказ

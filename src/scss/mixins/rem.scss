@@ -1,0 +1,5 @@
+@function rem($num) {
+  $strip-unit: calc($num / ($num * 0 + 1px));
+
+  @return calc($strip-unit / 16) * 1rem;
+}

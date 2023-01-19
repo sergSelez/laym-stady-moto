@@ -1,0 +1,77 @@
+.dignity {
+  display: flex;
+  justify-content: space-between;
+  gap: rem(16px);
+  margin-bottom: rem(18px);
+
+  @media screen and (min-width: $screen-md) {
+    margin-bottom: rem(35px);
+  }
+
+  @media screen and (min-width: $screen-xl) {
+    justify-content: center;
+    gap: rem(25px);
+  }
+
+  &__item {
+    @include flex-column;
+    flex: 1;
+    justify-content: space-between;
+    min-height: rem(74px);
+
+    @media screen and (min-width: $screen-md) and (max-width: $screen-xl) {
+      align-items: center;
+    }
+
+    @media screen and (min-width: $screen-xl) {
+      position: relative;
+      padding-top: rem(16px);
+      padding-left: rem(47px);
+      max-width: rem(220px);
+      width: 100%;
+    }
+  }
+
+  &__icon {
+    @include size(62px, 40px);
+
+    @media screen and (min-width: $screen-xl) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  }
+
+  &__title {
+    @include text-smaller(700);
+    text-align: center;
+
+    @media screen and (min-width: $screen-md) {
+      @include text-large(700);
+    }
+
+    @media screen and (min-width: $screen-xl) {
+      text-align: left;
+      margin-bottom: rem(13px);
+    }
+
+    // @media screen and (min-width: $screen-xl) {
+    //   margin-bottom: rem(16px);
+    //   text-align: left;
+    // }
+
+    // @media screen and (min-wdith: $screen-xl) {
+    //   @include text-large(700);
+    // }
+  }
+
+  &__text {
+    display: none;
+
+    @media screen and (min-width: $screen-xl) {
+      @include text-main();
+      display: inline;
+    }
+  }
+}

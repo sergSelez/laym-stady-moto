@@ -1,0 +1,18 @@
+extends ../pug/layout.pug
+
+block variables
+  - isMainPage = false
+  - pageTitle = 'Стартовая страница'
+  - metaDescription = 'description'
+  - metaKeywords = 'keywords'
+
+block main
+  +header
+  +menu
+  .wrapper.wrapper--main
+    .wrapper__basket
+      .basket
+        h1.basket__title Товары в корзине
+        .basket__wrapper
+    +aside-form
+  +footer

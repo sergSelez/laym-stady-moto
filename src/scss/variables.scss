@@ -1,0 +1,53 @@
+// Базовые цвета https://colorscheme.ru/color-converter.html
+
+$color-white:               #FFFFFF;
+$color-black:               #000000;
+$color-gray:                #F1F1F1;
+$color-gray-text:           #B4B4B4;
+$color-gray-dark:           #C8C8C8;
+$color-gray-white:          #EBEBEB;
+$color-gray-bg:             #F8F8F8;
+$color-gray-border:         #DEDEDE;
+$color-text:                #333333;
+$color-green:               #A1D214;
+$color-green-light:         #93C10E;
+$color-green-dark:          #87C04F;
+$color-yellow:              #FFC709;
+$color-yellow-light:        #FFC107;
+$color-red:                 #FF5C00;
+$color-brown:               #5F5F5F;
+$color-shadow:              rgba(0, 0, 0, 0.1);
+
+$font-size:                   16px;
+
+$font-size-h1:                40px;
+$font-size-h2:                32px;
+$font-size-h3:                24px;
+$font-size-h4:                18px;
+$font-size-h5:                16px;
+$font-size-h6:                16px;
+
+$font-size-sm:                0.75em; // 12px от 16px
+
+$line-height:                 1.5;
+
+$typo-margin-vertical:        1em;
+
+$font-family:                 'Montserrat', -apple-system, BlinkMacSystemFont, 'Roboto', 'Ubuntu', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+$font-family--monospace:     SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+// Georgia, Times New Roman, Times, serif
+
+// Ширины
+
+$screen-xs:                   0;
+$screen-sm:                   480px;
+$screen-md:                   768px;
+$screen-lg:                   992px;
+$screen-xl:                   1280px;
+$screen-xxl:                  1800px;
+
+$container-sm:                100%;
+$container-md:                100%;
+$container-lg:                $screen-lg - 30;
+$container-xl:                $screen-xl - 30;
+$container-xxl:               $screen-xxl - 30;

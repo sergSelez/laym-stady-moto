@@ -1,0 +1,106 @@
+.aside-form {
+  @include flex-column;
+
+  @media screen and (min-width: $screen-xl) {
+    @include size(376px, 100%);
+    position: sticky;
+    top: rem(160px);
+    margin-top: 160px;
+  }
+
+  &__box {
+    margin-bottom: rem(15px);
+    padding: rem(23px) rem(22px) rem(21px);
+    box-shadow: 0px 10px 20px $color-shadow;
+    border-radius: 5px;
+  }
+
+  &__title {
+    @include text-large(700);
+    margin-bottom: rem(15px);
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    gap: rem(16px);
+    margin-bottom: rem(32px);
+
+    &--column {
+      @media screen and (max-width: $screen-xl) {
+        flex-direction: column;
+        gap: rem(35px);
+      }
+    }
+  }
+
+  &__adress {
+    @include size(100%, rem(49px));
+    @include flex-center;
+    @include text-main(700);
+    margin-bottom: rem(35px);
+    border: 2px solid $color-green;
+    border-radius: 5px;
+    position: relative;
+
+    &::before {
+      @include size(20px, 20px);
+      content: '';
+      background-image: url('../img/check.jpg');
+      background-size: contain;
+      position: absolute;
+      top: -10px;
+      left: -10px;
+    }
+  }
+
+  &__input {
+    @include size(100%, rem(30px));
+    @include text-main;
+    padding: 0 rem(15px);
+    border: 1px solid $color-shadow;
+    border-radius: 5px;
+
+    &:focus,
+    &:focus-visible {
+      border-color: $color-black;
+    }
+  }
+
+  &__order-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 15px;
+    margin-bottom: rem(38px);
+  }
+
+  &__order-item {
+    @include flex-center;
+    @include text-main(700);
+    width: 48%;
+    height: rem(49px);
+    border: 1px solid $color-shadow;
+    border-radius: 5px;
+    cursor: pointer;
+
+    @media screen and (min-width: $screen-xl) {
+      width: rem(157px);
+    }
+
+    &.active {
+      border: 2px solid $color-green;
+      position: relative;
+
+      &::before {
+        @include size(20px, 20px);
+        content: '';
+        background-image: url('../img/check.jpg');
+        background-size: contain;
+        position: absolute;
+        top: -10px;
+        left: -10px;
+      }
+    }
+  }
+}

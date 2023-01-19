@@ -1,0 +1,135 @@
+.menu {
+  @include fixed;
+  background-color: $color-white;
+  z-index: 9;
+  transition: 0.3s ease;
+  transform: translateX(-100%);
+
+  @media screen and (min-width: $screen-xl) {
+    right: auto;
+    width: rem(302px);
+  }
+
+  &.active {
+    transform: translateX(0);
+  }
+
+  &__title {
+    @include text-main;
+    margin: 0 rem(16px) rem(16px);
+
+    @media screen and (min-width: $screen-xl) {
+      text-align: right;
+    }
+  }
+
+  &__list {
+    position: relative;
+    padding-top: rem(95px);
+
+    @media screen and (min-width: $screen-xl) {
+      padding-top: rem(136px);
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-height: rem(34px);
+    padding: 0 rem(30px) 0 rem(16px);
+    position: relative;
+    border-top: 1px solid $color-gray-white;
+    cursor: pointer;
+
+    @media screen and (min-width: $screen-xl) {
+      min-height: rem(38px);
+      padding-left: rem(21px);
+    }
+
+    &:hover {
+      background-color: $color-green;
+    }
+
+    &::after {
+      @include size(10px, 10px);
+      content: '';
+      position: absolute;
+      right: 11px;
+      top: calc(50% - 5px);
+      background-image: url('../img/more-arrow.svg');
+      background-size: contain;
+    }
+
+    &.active {
+      background-color: $color-green;
+    }
+  }
+
+  &__name {
+    @include text-large(500);
+  }
+
+  &__submenu-wrapper {
+    display: none;
+    background-color: $color-gray;
+    padding: rem(80px) rem(25px) 0 rem(25px);
+    position: absolute;
+    left: rem(52px);
+    right: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 1;
+
+    @media screen and (min-width: $screen-xl) {
+      left: auto;
+      transform: translateX(100%);
+      min-width: rem(338px);
+      padding: rem(162px) rem(53px) 0;
+    }
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &__subtitle {
+    @include text-large;
+    display: inline-block;
+    min-width: rem(201px);
+    margin-bottom: rem(18px);
+    padding-bottom: rem(8px);
+    border-bottom: 1px solid $color-gray-border;
+
+    @media screen and (min-width: $screen-xl) {
+      margin-bottom: rem(40px);
+    }
+  }
+
+  &__link-wrapper {
+    @include flex-column;
+    gap: rem(18px);
+  }
+
+  &__link {
+    @include text-large(600);
+    transition: color 0.3s;
+
+    &:hover {
+      color: $color-green-dark;
+    }
+  }
+
+  &__dark-wrapper {
+    display: none;
+
+    &.active {
+      @media screen and (min-width: $screen-xl) {
+        @include fixed;
+        display: block;
+        background: rgba(51, 51, 51, 0.7);
+        z-index: 8;
+      }
+    }
+  }
+}

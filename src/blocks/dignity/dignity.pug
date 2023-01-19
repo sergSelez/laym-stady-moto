@@ -1,0 +1,31 @@
+mixin dignity
+  -
+    const dignity = [
+      {
+        img: 'quality',
+        title: 'Качество продукции',
+        text: 'Выбирайте из&nbsp;40&nbsp;000&nbsp;товаров: у&nbsp;нас есть фрукты и&nbsp;овощи, мясо и&nbsp;рыба, все для дома и&nbsp;товары для животных'
+      },
+      {
+        img: 'order',
+        title: 'Легкий онлайн заказ',
+        text: 'Выбирайте из&nbsp;40&nbsp;000&nbsp;товаров: у&nbsp;нас есть фрукты и&nbsp;овощи, мясо и&nbsp;рыба, все для дома и&nbsp;товары для животных'
+      },
+      {
+        img: 'delivery',
+        title: 'Доставка до&nbsp;двери',
+        text: 'Выбирайте из&nbsp;40&nbsp;000&nbsp;товаров: у&nbsp;нас есть фрукты и&nbsp;овощи, мясо и&nbsp;рыба, все для дома и&nbsp;товары для животных'
+      },
+      {
+        img: 'choice',
+        title: 'Выбор покупателей',
+        text: 'Выбирайте из&nbsp;40&nbsp;000&nbsp;товаров: у&nbsp;нас есть фрукты и&nbsp;овощи, мясо и&nbsp;рыба, все для дома и&nbsp;товары для животных'
+      }
+    ]
+
+  section.dignity
+    each item in dignity
+      .dignity__item
+        img.dignity__icon(src=`img/${item.img}.svg`, alt=item.title)
+        span.dignity__title!=item.title
+        span.dignity__text!=item.text

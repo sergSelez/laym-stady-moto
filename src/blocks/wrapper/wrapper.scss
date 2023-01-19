@@ -1,0 +1,36 @@
+.wrapper {
+  max-width: rem(1316px);
+  margin: 0 auto;
+  padding: 0 rem(8px);
+  width: 100%;
+
+  @media screen and (min-width: $screen-xl) {
+    display: flex;
+    position: relative;
+    padding: 0 rem(35px);
+
+    &--main {
+      padding-right: 0;
+    }
+  }
+
+  &__content {
+    padding: rem(88px) 0;
+
+    @media screen and (min-width: $screen-xl) {
+      max-width: rem(1048px);
+      width: 100%;
+      padding: rem(128px) rem(20px) 0 0;
+    }
+  }
+
+  &__basket {
+    padding: rem(80px) 0 rem(40px);
+
+    @media screen and (min-width: $screen-xl) {
+      max-width: rem(864px);
+      width: 100%;
+      padding: rem(160px) rem(20px) 0 0;
+    }
+  }
+}

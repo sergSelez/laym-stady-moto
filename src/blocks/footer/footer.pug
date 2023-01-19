@@ -1,0 +1,110 @@
+mixin footer
+  -
+    const about = [
+      {
+        name: 'Доставка и оплата',
+        url: '#'
+      },
+      {
+        name: 'Вопрос-ответ',
+        url: '#'
+      },
+      {
+        name: 'Поставщикам',
+        url: '#'
+      },
+      {
+        name: 'Контакты',
+        url: '#'
+      },
+      {
+        name: 'Новости',
+        url: '#'
+      },
+      {
+        name: 'Политика',
+        url: '#'
+      }
+    ]
+    const buyers = [
+      {
+        name: 'Бонусная система',
+        url: '#'
+      },
+      {
+        name: 'Как вернуть',
+        url: '#'
+      },
+      {
+        name: 'Как заказать',
+        url: '#'
+      },
+      {
+        name: 'Программа лояльности',
+        url: '#'
+      },
+      {
+        name: 'Акции',
+        url: '#'
+      },
+      {
+        name: 'Шеф-лайм',
+        url: '#'
+      }
+    ]
+    const social = [
+      {
+        url: '#',
+        src: 'facebook',
+        name: 'facebook'
+      },
+      {
+        url: '#',
+        src: 'youtube',
+        name: 'youtube'
+      },
+      {
+        url: '#',
+        src: 'facebook',
+        name: 'facebook'
+      }
+    ]
+
+  footer.footer
+    .wrapper
+      .footer__left
+        .footer__logo-wrapper
+          svg.footer__logo
+            use(href='img/svgSprite.svg#footer-logo')
+          p.footer__text.footer__text--mb © 2001–2021 ООО «Лайм»
+          p.footer__text Все права защищены. «Лайм» является зарегистрированным товарным знаком Lime Holding SA.
+          a.footer__privacy(href="#") Политика Конфиденциальности
+        .footer__menu-wrapper
+          .footer__menu
+            .footer__title О компании
+            ul.footer__ul
+              each item in about
+                li.footer__li
+                  a.footer__menu-link(href=item.url)!=item.name
+          .footer__menu
+            .footer__title Покупателям
+            ul.footer__ul
+              each item in buyers
+                li.footer__li
+                  a.footer__menu-link(href=item.url)!=item.name
+      .footer__right
+        p.footer__right-text Круглосуточная поддержка
+        a.footer__phone(href="#") 7756
+        a.footer__button(href="#")
+          svg(width="24", height="21")
+              use(href='img/svgSprite.svg#appstore')
+          | Скачать в AppStore
+        a.footer__button(href="#")
+          svg(width="24", height="21")
+              use(href='img/svgSprite.svg#playmarket')
+          | Скачать в Play Market
+        ul.footer__social
+          each item in social
+            li
+              a(href=item.url)
+                img(src=`img/${item.src}.svg`, alt=item.name, width="24", height="24")
